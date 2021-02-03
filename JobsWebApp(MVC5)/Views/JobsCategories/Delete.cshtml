@@ -1,0 +1,41 @@
+﻿@model JobsWebApp_MVC5_.Models.JobsCategory
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+<h2>حذف الوظيفه</h2>
+
+<h3>هل أنت متأكد من حذف الوظيفه؟</h3>
+<div>
+    <h4>وصف الوظيفه</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.JobName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.JobName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.JobDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.JobDescription)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="حذف" class="btn btn-danger" /> |
+            @Html.ActionLink("العوده إلى القائمه الرئيسيه", "Index")
+        </div>
+    }
+</div>

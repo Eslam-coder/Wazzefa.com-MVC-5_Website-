@@ -1,0 +1,54 @@
+﻿@model IEnumerable<JobsWebApp_MVC5_.Models.Jobs>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+@*<h2>Index</h2>*@
+
+<p>
+    @Html.ActionLink("إنشاء وظيفه", "Create")
+</p>
+<table class="table table-bordered text-center">
+    <tr>
+        <th style="text-align:center">
+            @Html.DisplayNameFor(model => model.CategoryId)
+        </th>
+        <th style="text-align:center">
+            @Html.DisplayNameFor(model => model.JobTitle)
+        </th>
+        <th style="text-align:center">
+            @Html.DisplayNameFor(model => model.JobContent)
+        </th>
+        <th style="text-align:center">
+            @Html.DisplayNameFor(model => model.JobImage)
+        </th>
+
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.JobsCategory.JobName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.JobTitle)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.JobContent)
+    </td>
+    <td style="position:center">
+        <img src="~/Uploads/@Html.DisplayFor(modelItem => item.JobImage)" class="thumbnail" style="width:48px;height:48px" />
+    </td>
+
+    <td class="anchorLink">
+        @Html.ActionLink("تعديل", "Edit", new { id = item.ID }) |
+        @Html.ActionLink("تفاصيل الوظيفه", "Details", new { id = item.ID }) |
+        @Html.ActionLink("حذف الوظيفه", "Delete", new { id = item.ID })
+    </td>
+</tr>
+}
+
+</table>

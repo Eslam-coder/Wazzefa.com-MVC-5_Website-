@@ -1,0 +1,80 @@
+﻿body {
+    padding-top:45px;
+    /*margin-top:900px;*/
+}
+
+@font-face {
+    font-family: fontHeader;
+    src: url('GE_SS_Two_Bold.woff');
+}
+@font-face {
+    font-family: fontHeader2;
+    src: url('DroidKufi-Regular.ttf');
+}
+.navbar-default {
+    background-color: #8b5e83;
+    border-color: #8b5e83;
+}
+
+.navbar-default .navbar-nav > li > a {
+   color: white;
+   font-weight:bold;
+   font-size:17px;
+   padding:20px;
+}
+
+.navbar-default .navbar-nav>li>a:hover{
+    color: whitesmoke;
+}
+
+.myFooter {
+    background-color: #8b5e83;
+    font-weight:bold;
+    color:white;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    
+}
+
+a:hover {
+    color: whitesmoke;
+    text-decoration: underline;
+}
+
+.SubFooter {
+    text-align: center;
+    color: black;
+    font-weight: bold;
+}
+.Logo {
+    /* font-family: 'Lalezar', cursive;*/
+    font-family: 'Rakkas', cursive;
+    /*font-family: 'Yellowtail', cursive;*/
+    color: white;
+    font-size: 25px;
+    margin-top: 3px;
+}
+
+.btn-default {
+    color: white;
+    background-color: #8b5e83;
+    border-color: #8b5e83;
+}
+
+.btn-default:hover {
+   color: #8b5e83;
+   background-color: white;
+   border-color: #8b5e83;
+}
+
+.anchorLink {
+    color: #8b5e83;
+    text-decoration: none;
+}
+
+.Navbar-position{
+    margin-bottom:0px;
+}

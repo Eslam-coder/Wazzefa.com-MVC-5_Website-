@@ -1,0 +1,40 @@
+﻿@model IEnumerable<JobsWebApp_MVC5_.Models.JobsCategory>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+<h2>الوظائف المتوفره</h2>
+
+<p class="anchorLink">
+    @Html.ActionLink("إنشاء وظيفه جديده", "Create")
+</p>
+<table class="table table-bordered text-center">
+    <tr>
+        <th style="text-align:center">
+            @Html.DisplayNameFor(model => model.JobName)
+        </th>
+        <th style="text-align:center">
+            @Html.DisplayNameFor(model => model.JobDescription)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.JobName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.JobDescription)
+        </td>
+        <td>
+            @Html.ActionLink("تعديل", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("تفاصيل نوع الوظيفه", "Details", new { id=item.ID }) |
+            @Html.ActionLink("حذف الوظيفه", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

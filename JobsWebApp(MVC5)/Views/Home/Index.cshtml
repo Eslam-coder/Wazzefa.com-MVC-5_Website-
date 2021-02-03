@@ -1,0 +1,28 @@
+﻿@model IEnumerable<JobsWebApp_MVC5_.Models.JobsCategory>
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>مرحبا بك عزيزى الزائر</h1>
+    <p class="lead">مرحبا بك فى فضاء البحث عن وظائف باختلاف اصنافها ،و يمكنك نشر وظيفه إن كنت ناشرا او  يمكنك التقدم للوظيفه إذا كنت باحثا عن شغل </p>
+    <p><a href="https://asp.net" class="btn btn-default btn-lg">المزيد من التفاصيل &raquo;</a></p>
+</div>
+@foreach (var item in Model)
+{
+    <h1>@Html.DisplayFor(model => item.JobName)</h1>
+    <h5>@Html.DisplayFor(model => item.JobDescription)</h5>
+    <div class="row">
+        @foreach (var subItem in item.Jobs)
+        {
+
+            <div class="col-md-4 thumbnail">
+                <img src="~/Uploads/@Html.DisplayFor(model=>subItem.JobImage)" />
+                <h3>@Html.DisplayFor(model => subItem.JobTitle)</h3>
+                <h5>@Html.DisplayFor(model => subItem.JobContent)</h5>
+                <button class="btn btn-default">التفاصيل</button>
+            </div>
+
+        }
+    </div>
+}

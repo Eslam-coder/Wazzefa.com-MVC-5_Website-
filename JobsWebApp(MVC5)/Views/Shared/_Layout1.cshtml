@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>@Page.Title</title>
+    @RenderSection("head", required: false)
+    <link href="~/Contents/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Styles/Styles.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lalezar&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lalezar&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lalezar&family=Yellowtail&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lalezar&family=Rakkas&family=Yellowtail&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!--Navbar Header-->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="~/Home/Index" class="navbar-brand">
+                    
+                 <h6 class="Logo">وظيفه.كوم</h6>
+                </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+                <ul class="navbar-nav nav">
+                    <li >
+                        <a href="#">
+                            <i class="glyphicon glyphicon-home"></i>
+                            الصـفحـه الرئـيـسـيـه
+                        </a>
+                    </li>
+                    <li >
+                        <a href="#">
+                            <i class="glyphicon glyphicon-folder-open"></i>
+                            الوظـائـف
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="glyphicon glyphicon-info-sign"></i>
+                            حـول الـمـوقـع
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="glyphicon glyphicon-envelope"></i>
+                            اتصـل بـنـا 
+                        </a>
+                    </li>
+
+                </ul>
+                <!--PartialView-->
+               @Html.Partial("_Login")
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row">
+            @RenderBody()
+        </div>
+    </div>
+    <!--Navbar Footer-->
+    <div class="navbar @*navbar-fixed-bottom*@  myFooter">
+        <div class="container">
+            <div class="col-md-4">
+                <h3><i class="glyphicon glyphicon-question-sign"></i> من نحن</h3>
+                <p> </p>
+            </div>
+            <div class="col-md-4">
+                <h3><i class="glyphicon glyphicon-globe"></i> روابط هامه  </h3>
+                <ul>
+                    <li><a href="#">وظائف للقطاع الخاص</a></li>
+                    <li><a href="#">وظائف للقطاع العام</a></li>
+                    <li><a href="#">وظائف خارج البلاد</a></li>
+                    <li><a href="#">وظائف متنوعه</a></li>
+                </ul>
+
+            </div>
+            <div class="col-md-4">
+                <h3> <i class="glyphicon glyphicon-comment"></i> تواصل معنا </h3>	
+                <ul>
+                    <li><a href="#">صفحتنا على الفيسبوك</a></li>
+                    <li><a href="#">تابعنا على تويتر</a></li>
+                    <li><a href="#">شاهدنا على اليوتيوب</a></li>
+                    <li><a href="#">اترك لنا رساله</a></li>
+                </ul>
+            </div>
+            <div class="SubFooter">
+                <p>جميع الحقوق محفوظه لموقع وظيفه.كوم - 2021</p>
+            </div>
+        </div>
+    </div>
+    <script src="~/Scripts/jquery.js"></script>
+    <script src="~/Contents/bootstrap.min.js"></script>
+</body>
+</html>
